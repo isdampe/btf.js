@@ -22,11 +22,15 @@
 			links[i] = document.createElement("link");
 			links[i].rel = "stylesheet";
 			links[i].href = buff[i];
-			totalLoaded++;
+			links[i].onload = function(){
+				totalLoaded++;
+				if ( totalLoaded >= (max -1) ) {
+					atf.parentElement.removeChild(atf);
+				}
+			};
+			
 			document.head.appendChild(links[i]);
-			if ( totalLoaded >= (max -1) ) {
-				atf.parentElement.removeChild(atf);
-			}
+			
 			
 		}
 	}
