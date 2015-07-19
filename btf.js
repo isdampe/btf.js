@@ -1,3 +1,8 @@
+/*
+ * btf.js
+ * Automatically and asynchronously load stylesheets, while
+ * above the fold content has already been rendered.
+ */
 (function(){
 	
 	var atf, buff, i = 0, max, links = [], totalLoaded = 0;
@@ -11,7 +16,7 @@
 	buff = buff.split(";");
 	
 	if ( buff.length < 2 ) {
-		buff = [buff];
+		buff = buff;
 	}
 	
 	max = buff.length;
